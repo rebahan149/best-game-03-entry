@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOOMLIGHT — pluck the wires, keep the dawn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>🕯️ LOOMLIGHT</h1>
+  <p class="tagline">Pluck the wires, keep the dawn. Weave light into traps, and hold the hearth for seven nights.</p>
+  <div id="hud" class="hud">Night 1/7</div>
+  <div class="stage">
+    <canvas id="game" width="960" height="640"></canvas>
+
+    <section id="title-screen" class="overlay">
+      <h2>The loom is strung. The dark is coming.</h2>
+      <p>Shadow creatures walk in from the edges of the night to snuff out your hearth.</p>
+      <ul>
+        <li><strong>Drag</strong> from one post to another to weave a luminous thread.</li>
+        <li>Threads <strong>cut</strong> what crosses them — but every crossing drains their tension.</li>
+        <li><strong>Click a thread</strong> to pluck it: stored tension snaps out as one big hit, and the thread is spent.</li>
+        <li>The lantern's beam <strong>burns</strong> shadows and <strong>re-strings</strong> threads it shines on.</li>
+        <li>Survive 7 nights. Spend embers at dawn. Don't let the flame die.</li>
+      </ul>
+      <button id="start-btn" class="big">Begin night 1</button>
+    </section>
+
+    <section id="shop" class="overlay hidden">
+      <h2>🌅 Dawn — night <span id="shop-night">2</span> approaches</h2>
+      <p>The loom hums with <strong><span id="shop-embers">0</span> ✨ embers</strong>. Spend them before dark.</p>
+      <div class="shop-grid">
+        <button data-buy="thread">🧵 +1 thread loom <span class="owned"></span><span class="price"></span></button>
+        <button data-buy="sharp">🗡️ Sharper wire (+6 cut) <span class="owned"></span><span class="price"></span></button>
+        <button data-buy="beam">🔦 Wider lantern beam <span class="owned"></span><span class="price"></span></button>
+        <button data-buy="rekindle">🔥 Rekindle hearth (+35) <span class="owned"></span><span class="price"></span></button>
+        <button data-buy="posts">🪵 Extra post pair <span class="owned"></span><span class="price"></span></button>
+      </div>
+      <button id="next-night-btn" class="big">Face the night</button>
+    </section>
+
+    <section id="end-screen" class="overlay hidden">
+      <h2 id="end-title"></h2>
+      <p id="end-stats"></p>
+      <button id="again-btn" class="big">Play again</button>
+      <p class="hint">…or press R any time to restart.</p>
+    </section>
+  </div>
+  <p class="hint">Drag post → post to weave · Click a thread to pluck it · R restarts</p>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
